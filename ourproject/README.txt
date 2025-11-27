@@ -1,5 +1,6 @@
 This is our prototype for the Milestone on the 27.11.2025
 
-add traas-1.1.jar into libraries in IntelliJ (File> Project Structure> Libraries> Java> <ourproject/libraries/traas-1.1.jar>) and then build project with IntelliJ build manager.
+Import the project in IntelliJ (File > New > Project from Existing Sources) and use the default IntelliJ run configuration. 
 
-THE .sumocfg MUST BE NAMED myconfig.sumocfg !!!
+THE .sumocfg MUST BE NAMED myconfig.sumocfg!!! This has already done for demonstration purpouses.
+
