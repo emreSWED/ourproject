@@ -21,8 +21,8 @@ public class Main {
             System.out.println("step number " + step + " Number of vehicles in simulation: " + vehicles.size());
             System.out.println("current traffic lights: " + trafficLights.size());
             System.out.println("ID of Traffic lights:"+ trafficLights);
-            trafficLights.forEach(System.out::println);
-            System.out.println(trafficLights.toString());
+            //trafficLights.forEach(System.out::println);
+            //System.out.println(trafficLights.toString());
             TimeUnit.MILLISECONDS.sleep(1000);
         }
 
