@@ -22,7 +22,7 @@ public class Main {
         List<String> lanes = (List<String>) conn.traciConnection.do_job_get(Lane.getIDList());
         JunctionLoader junctions = new JunctionLoader(conn.traciConnection);
 
-
+        //github test 17:32
         System.out.println("current number of traffic lights: " + trafficLights.size());
         System.out.println("ID of Traffic lights:"+ conn.getTrafficLights());
         System.out.println("ID of Lanes:"+ lanes);
