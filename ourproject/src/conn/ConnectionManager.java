@@ -1,0 +1,39 @@
+package conn;
+
+import de.tudresden.sumo.cmd.*;
+import de.tudresden.sumo.util.*;
+import it.polito.appeal.traci.*;
+
+import java.io.IOException;
+import java.util.List;
+
+public class ConnectionManager {
+    private String configFile;
+    private SumoTraciConnection traciConnection;
+
+    public ConnectionManager(String configFile) {
+        this.configFile = configFile;
+        this.traciConnection = new SumoTraciConnection("sumo-gui", this.configFile);
+    }
+
+    public void startConnection() throws IOException {
+        traciConnection.addOption("start","true");
+        traciConnection.runServer();
+    }
+
+    public void stopConnection() {
+        traciConnection.close();
+    }
+
+    public void step() throws Exception {
+        traciConnection.do_timestep();
+    }
+
+    public List<String> getVehicles() throws Exception {
+        return (List<String>) traciConnection.do_job_get(Vehicle.getIDList());
+    }
+
+    public List<String> getTrafficLights() throws Exception {
+        return (List<String>) traciConnection.do_job_get(Trafficlight.getIDList());
+    }
+}
