@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2025-12-03 12:11:54 by Eclipse SUMO GUI Version 1.24.0
+<!-- generated on 2025-12-03 12:30:23 by Eclipse SUMO GUI Version 1.24.0
 <sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
-        <net-file value="ourproject/SumoConfig/fkk_in/ingolstadt.net.xml.gz"/>
-        <route-files value="ourproject/SumoConfig/fkk_in/fkk_in.rou.xml"/>
-        <additional-files value="ourproject/SumoConfig/fkk_in/fkk_in.tls.add.xml,ourproject/SumoConfig/input_additional.add.xml"/>
+        <net-file value="SumoConfig/fkk_in/ingolstadt.net.xml.gz"/>
+        <route-files value="SumoConfig/fkk_in/fkk_in.rou.xml"/>
+        <additional-files value="SumoConfig/fkk_in/fkk_in.tls.add.xml,SumoConfig/input_additional.add.xml"/>
     </input>
 
     <time>
@@ -20,11 +20,11 @@
     </report>
 
     <traci_server>
-        <remote-port value="51290"/>
+        <remote-port value="51526"/>
     </traci_server>
 
     <gui_only>
-        <gui-settings-file value="ourproject/SumoConfig/fkk_in/fkk_in.settings.xml"/>
+        <gui-settings-file value="SumoConfig/fkk_in/fkk_in.settings.xml"/>
         <start value="true"/>
     </gui_only>
 

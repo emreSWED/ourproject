@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        SumoTraciConnection conn = new SumoTraciConnection("sumo-gui", "ourproject/SumoConfig/myconfig.sumocfg");
+        SumoTraciConnection conn = new SumoTraciConnection("sumo-gui", "SumoConfig/myconfig.sumocfg");
         conn.addOption("start","true");
         conn.runServer();
 

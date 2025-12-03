@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-12-03 12:30:23 by Eclipse SUMO GUI Version 1.24.0
+<sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="SumoConfig/fkk_in/ingolstadt.net.xml.gz"/>
+        <route-files value="SumoConfig/fkk_in/fkk_in.rou.xml"/>
+        <additional-files value="SumoConfig/fkk_in/fkk_in.tls.add.xml,SumoConfig/input_additional.add.xml"/>
+    </input>
+
+    <time>
+        <begin value="0"/>
+        <end value="180"/>
+        <step-length value=".2"/>
+    </time>
+
+    <report>
+        <xml-validation value="never"/>
+    </report>
+
+    <traci_server>
+        <remote-port value="51526"/>
+    </traci_server>
+
+    <gui_only>
+        <gui-settings-file value="SumoConfig/fkk_in/fkk_in.settings.xml"/>
+        <start value="true"/>
+    </gui_only>
+
+</sumoConfiguration>
+-->
+
+<meandata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/meandata_file.xsd">
+    <interval begin="0.00" end="0.80" id="dump">
+        <edge id="148050455#0" sampledSeconds="0.60" traveltime="10.05" overlapTraveltime="10.72" density="9.95" laneDensity="9.95" occupancy="4.97" waitingTime="0.00" timeLoss="0.01" speed="7.50" speedRelative="0.90" departed="1" arrived="0" entered="0" left="0" laneChangedFrom="0" laneChangedTo="0"/>
+        <edge id="29119850" sampledSeconds="1.20" traveltime="2.28" overlapTraveltime="2.60" density="64.46" laneDensity="21.49" occupancy="7.09" waitingTime="0.00" timeLoss="0.01" speed="10.20" speedRelative="0.73" departed="3" arrived="0" entered="0" left="0" laneChangedFrom="0" laneChangedTo="0"/>
+        <edge id="30399663#0" sampledSeconds="0.60" traveltime="0.66" overlapTraveltime="0.98" density="73.46" laneDensity="24.49" occupancy="9.94" waitingTime="0.00" timeLoss="0.00" speed="15.50" speedRelative="1.12" departed="2" arrived="0" entered="0" left="1" laneChangedFrom="0" laneChangedTo="0"/>
+        <edge id="737320747#4" sampledSeconds="0.60" traveltime="7.55" overlapTraveltime="7.85" density="6.02" laneDensity="2.01" occupancy="1.00" waitingTime="0.00" timeLoss="0.01" speed="16.50" speedRelative="1.19" departed="2" arrived="0" entered="0" left="0" laneChangedFrom="0" laneChangedTo="0"/>
+    </interval>
+    <interval begin="0.00" end="0.80" id="hbefa">
+        <edge id="148050455#0" sampledSeconds="0.60" CO_abs="1.61" CO2_abs="865.64" HC_abs="0.01" PMx_abs="0.08" NOx_abs="0.30" fuel_abs="280.63" electricity_abs="0.00"
+            CO_normed="96.16" CO2_normed="51670.01" HC_normed="0.64" PMx_normed="4.99" NOx_normed="18.07" fuel_normed="16750.90" electricity_normed="0.00"
+            traveltime="10.05" CO_perVeh="26.99" CO2_perVeh="14503.59" HC_perVeh="0.18" PMx_perVeh="1.40" NOx_perVeh="5.07" fuel_perVeh="4701.92" electricity_perVeh="0.00"/>
+        <edge id="29119850" sampledSeconds="1.20" CO_abs="6.24" CO2_abs="1066.54" HC_abs="0.04" PMx_abs="0.17" NOx_abs="0.39" fuel_abs="345.76" electricity_abs="0.00"
+            CO_normed="1206.08" CO2_normed="206250.04" HC_normed="8.20" PMx_normed="33.13" NOx_normed="75.62" fuel_normed="66864.12" electricity_normed="0.00"
+            traveltime="2.28" CO_perVeh="11.85" CO2_perVeh="2026.86" HC_perVeh="0.08" PMx_perVeh="0.33" NOx_perVeh="0.74" fuel_perVeh="657.09" electricity_perVeh="0.00"/>
+        <edge id="30399663#0" sampledSeconds="0.33" CO_abs="4.24" CO2_abs="511.90" HC_abs="0.03" PMx_abs="0.06" NOx_abs="0.19" fuel_abs="165.95" electricity_abs="0.00"
+            CO_normed="1870.39" CO2_normed="225614.97" HC_normed="12.54" PMx_normed="28.44" NOx_normed="83.56" fuel_normed="73141.39" electricity_normed="0.00"
+            traveltime="0.66" CO_perVeh="8.48" CO2_perVeh="1022.79" HC_perVeh="0.06" PMx_perVeh="0.13" NOx_perVeh="0.38" fuel_perVeh="331.57" electricity_perVeh="0.00"/>
+        <edge id="737320747#4" sampledSeconds="0.60" CO_abs="12.62" CO2_abs="1468.99" HC_abs="0.09" PMx_abs="0.21" NOx_abs="0.55" fuel_abs="476.23" electricity_abs="0.00"
+            CO_normed="455.77" CO2_normed="53070.42" HC_normed="3.07" PMx_normed="7.55" NOx_normed="19.89" fuel_normed="17204.75" electricity_normed="0.00"
+            traveltime="7.55" CO_perVeh="158.71" CO2_perVeh="18480.61" HC_perVeh="1.07" PMx_perVeh="2.63" NOx_perVeh="6.93" fuel_perVeh="5991.18" electricity_perVeh="0.00"/>
+    </interval>
+</meandata>
