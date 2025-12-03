@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        SumoTraciConnection conn = new SumoTraciConnection("sumo-gui", "SumoConfig/myconfig.sumocfg");
+        SumoTraciConnection conn = new SumoTraciConnection("sumo-gui", "ourproject/SumoConfig/myconfig.sumocfg");
         conn.addOption("start","true");
         conn.runServer();
 
@@ -23,7 +23,7 @@ public class Main {
             System.out.println("ID of Traffic lights:"+ trafficLights);
             //trafficLights.forEach(System.out::println);
             //System.out.println(trafficLights.toString());
-            TimeUnit.MILLISECONDS.sleep(1000);
+            TimeUnit.MILLISECONDS.sleep(50);
         }
 
         conn.close();
