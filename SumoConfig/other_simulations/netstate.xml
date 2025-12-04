@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-12-04 11:04:02 by Eclipse SUMO GUI Version 1.24.0
+<sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="SumoConfig/fkk_in/ingolstadt.net.xml.gz"/>
+        <route-files value="SumoConfig/fkk_in/fkk_in.rou.xml"/>
+        <additional-files value="SumoConfig/fkk_in/fkk_in.tls.add.xml,SumoConfig/input_additional.add.xml"/>
+    </input>
+
+    <time>
+        <begin value="0"/>
+        <end value="180"/>
+        <step-length value=".2"/>
+    </time>
+
+    <report>
+        <xml-validation value="never"/>
+    </report>
+
+    <traci_server>
+        <remote-port value="50720"/>
+    </traci_server>
+
+    <gui_only>
+        <gui-settings-file value="SumoConfig/fkk_in/fkk_in.settings.xml"/>
+        <start value="true"/>
+    </gui_only>
+
+</sumoConfiguration>
+-->
+
+<meandata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/meandata_file.xsd">
+    <interval begin="0.00" end="3.00" id="dump">
+        <edge id="148050455#0" sampledSeconds="2.80" traveltime="9.96" overlapTraveltime="10.62" density="12.38" laneDensity="12.38" occupancy="6.19" waitingTime="0.00" timeLoss="0.04" speed="7.57" speedRelative="0.91" departed="1" arrived="0" entered="0" left="0" laneChangedFrom="0" laneChangedTo="0"/>
+        <edge id="29119850" sampledSeconds="6.32" traveltime="2.45" overlapTraveltime="2.68" density="90.60" laneDensity="30.20" occupancy="9.67" waitingTime="0.00" timeLoss="0.18" speed="9.98" speedRelative="0.72" departed="3" arrived="0" entered="0" left="2" laneChangedFrom="1" laneChangedTo="1"/>
+        <edge id="29119850.76" sampledSeconds="0.95" traveltime="3.57" overlapTraveltime="3.92" density="6.19" laneDensity="1.55" occupancy="0.62" waitingTime="0.00" timeLoss="0.01" speed="14.41" speedRelative="1.04" departed="0" arrived="0" entered="2" left="0" laneChangedFrom="0" laneChangedTo="0"/>
+        <edge id="30399663#0" sampledSeconds="1.48" traveltime="0.75" overlapTraveltime="1.11" density="48.32" laneDensity="16.11" occupancy="6.08" waitingTime="0.00" timeLoss="0.02" speed="13.66" speedRelative="0.98" departed="2" arrived="0" entered="0" left="2" laneChangedFrom="1" laneChangedTo="1"/>
+        <edge id="30399663#1" sampledSeconds="2.64" traveltime="3.58" overlapTraveltime="3.92" density="17.11" laneDensity="4.28" occupancy="1.84" waitingTime="0.00" timeLoss="0.03" speed="14.37" speedRelative="1.03" departed="0" arrived="0" entered="2" left="0" laneChangedFrom="0" laneChangedTo="0"/>
+        <edge id="737320747#4" sampledSeconds="7.00" traveltime="8.23" overlapTraveltime="8.56" density="18.73" laneDensity="6.24" occupancy="3.12" waitingTime="0.00" timeLoss="0.13" speed="15.13" speedRelative="1.09" departed="3" arrived="0" entered="0" left="0" laneChangedFrom="1" laneChangedTo="1"/>
+    </interval>
+    <interval begin="0.00" end="3.00" id="hbefa">
+        <edge id="148050455#0" sampledSeconds="2.80" CO_abs="6.12" CO2_abs="3995.26" HC_abs="0.04" PMx_abs="0.42" NOx_abs="1.43" fuel_abs="1295.23" electricity_abs="0.00"
+            CO_normed="97.39" CO2_normed="63593.40" HC_normed="0.65" PMx_normed="6.66" NOx_normed="22.74" fuel_normed="20616.41" electricity_normed="0.00"
+            traveltime="9.96" CO_perVeh="21.77" CO2_perVeh="14213.52" HC_perVeh="0.15" PMx_perVeh="1.49" NOx_perVeh="5.08" fuel_perVeh="4607.90" electricity_perVeh="0.00"/>
+        <edge id="29119850" sampledSeconds="5.59" CO_abs="80.27" CO2_abs="10696.73" HC_abs="0.53" PMx_abs="0.82" NOx_abs="3.68" fuel_abs="3467.72" electricity_abs="0.00"
+            CO_normed="4139.45" CO2_normed="551614.66" HC_normed="27.42" PMx_normed="42.16" NOx_normed="189.93" fuel_normed="178825.11" electricity_normed="0.00"
+            traveltime="2.45" CO_perVeh="35.16" CO2_perVeh="4685.23" HC_perVeh="0.23" PMx_perVeh="0.36" NOx_perVeh="1.61" fuel_perVeh="1518.88" electricity_perVeh="0.00"/>
+        <edge id="29119850.76" sampledSeconds="0.95" CO_abs="15.13" CO2_abs="2564.47" HC_abs="0.10" PMx_abs="0.41" NOx_abs="0.94" fuel_abs="831.37" electricity_abs="0.00"
+            CO_normed="352.88" CO2_normed="59824.25" HC_normed="2.40" PMx_normed="9.55" NOx_normed="21.94" fuel_normed="19394.40" electricity_normed="0.00"
+            traveltime="3.57" CO_perVeh="56.56" CO2_perVeh="9589.04" HC_perVeh="0.38" PMx_perVeh="1.53" NOx_perVeh="3.52" fuel_perVeh="3108.67" electricity_perVeh="0.00"/>
+        <edge id="30399663#0" sampledSeconds="0.75" CO_abs="16.90" CO2_abs="2116.82" HC_abs="0.11" PMx_abs="0.16" NOx_abs="0.74" fuel_abs="686.24" electricity_abs="0.00"
+            CO_normed="1986.44" CO2_normed="248794.00" HC_normed="13.17" PMx_normed="19.33" NOx_normed="86.79" fuel_normed="80655.21" electricity_normed="0.00"
+            traveltime="0.75" CO_perVeh="16.88" CO2_perVeh="2114.75" HC_perVeh="0.11" PMx_perVeh="0.16" NOx_perVeh="0.74" fuel_perVeh="685.57" electricity_perVeh="0.00"/>
+        <edge id="30399663#1" sampledSeconds="2.64" CO_abs="39.84" CO2_abs="5705.75" HC_abs="0.27" PMx_abs="0.74" NOx_abs="2.08" fuel_abs="1849.73" electricity_abs="0.00"
+            CO_normed="930.04" CO2_normed="133182.16" HC_normed="6.25" PMx_normed="17.26" NOx_normed="48.48" fuel_normed="43176.01" electricity_normed="0.00"
+            traveltime="3.58" CO_perVeh="54.02" CO2_perVeh="7735.47" HC_perVeh="0.36" PMx_perVeh="1.00" NOx_perVeh="2.82" fuel_perVeh="2507.74" electricity_perVeh="0.00"/>
+        <edge id="737320747#4" sampledSeconds="7.00" CO_abs="164.18" CO2_abs="21071.13" HC_abs="1.10" PMx_abs="2.65" NOx_abs="7.72" fuel_abs="6830.99" electricity_abs="0.00"
+            CO_normed="1581.74" CO2_normed="202997.36" HC_normed="10.60" PMx_normed="25.52" NOx_normed="74.42" fuel_normed="65809.11" electricity_normed="0.00"
+            traveltime="8.23" CO_perVeh="193.03" CO2_perVeh="24773.64" HC_perVeh="1.29" PMx_perVeh="3.11" NOx_perVeh="9.08" fuel_perVeh="8031.29" electricity_perVeh="0.00"/>
+    </interval>
+</meandata>
