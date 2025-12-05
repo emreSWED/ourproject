@@ -16,6 +16,15 @@ public class ConnectionManager {
         this.traciConnection = new SumoTraciConnection("sumo-gui", this.configFile);
     }
 
+    public Object dojobget(SumoCommand cmd) throws Exception {
+
+        return this.traciConnection.do_job_get(cmd);
+    }
+
+    public void dojobset(SumoCommand cmd) throws Exception {
+        this.traciConnection.do_job_set(cmd);
+    }
+
     public void startConnection() throws IOException {
         traciConnection.addOption("start","true");
         traciConnection.runServer();

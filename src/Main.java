@@ -18,8 +18,8 @@ public class Main {
         conn.startConnection();
 
         //get map data for UI
-        List<String> trafficLights = (List<String>) conn.traciConnection.do_job_get(Trafficlight.getIDList());
-        List<String> lanes = (List<String>) conn.traciConnection.do_job_get(Lane.getIDList());
+        List<String> trafficLights = conn.getTrafficLights();
+        List<String> lanes = (List<String>) conn.dojobget(Lane.getIDList());
         JunctionLoader junctions = new JunctionLoader(conn.traciConnection);
 
         //github test 17:32
