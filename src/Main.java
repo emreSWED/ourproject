@@ -28,13 +28,18 @@ public class Main {
         System.out.println("ID of Lanes:"+ lanes);
         System.out.println("ID of Junctions:" + junctions.JunctionPositionList);
 
+
+
         for (int step = 0; step < 10000; step++) {
             conn.step();
 
             System.out.println("step number " + step + ". Number of vehicles in simulation: " + conn.getVehicles().size());
             System.out.println("List of cars in simulation: " + conn.getVehicles());
 
-            TimeUnit.MILLISECONDS.sleep(1000);
+            List<String> routes = (List<String>) conn.dojobget(Route.getIDList());
+            System.out.println("ID of Routes:"+ routes);
+
+            TimeUnit.MILLISECONDS.sleep(50);
         }
 
         conn.stopConnection();

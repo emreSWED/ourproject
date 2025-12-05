@@ -1,3 +1,6 @@
+// Simple Wrapper class for the SumoTraciConnection class
+
+
 package conn;
 
 import de.tudresden.sumo.cmd.*;
@@ -20,6 +23,16 @@ public class ConnectionManager {
         traciConnection.addOption("start","true");
         traciConnection.runServer();
     }
+
+    public Object dojobget(SumoCommand cmd) throws Exception {
+
+        return this.traciConnection.do_job_get(cmd);
+    }
+
+    public void dojobset(SumoCommand cmd) throws Exception {
+        this.traciConnection.do_job_set(cmd);
+    }
+
 
     public void stopConnection() {
         traciConnection.close();

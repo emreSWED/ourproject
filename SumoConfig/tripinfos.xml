@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2025-12-04 11:26:41 by Eclipse SUMO GUI Version 1.24.0
+<!-- generated on 2025-12-04 17:53:39 by Eclipse SUMO GUI Version 1.24.0
 <sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
-        <net-file value="C:\Users\EMPC\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\SUMO\2025-12-04-11-26-28\osm.net.xml.gz"/>
-        <route-files value="C:\Users\EMPC\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\SUMO\2025-12-04-11-26-28\osm.passenger.trips.xml"/>
-        <additional-files value="C:\Users\EMPC\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\SUMO\2025-12-04-11-26-28\osm.poly.xml.gz,C:\Users\EMPC\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\SUMO\2025-12-04-11-26-28\output.add.xml"/>
+        <net-file value="SumoConfig/osm.net.xml.gz"/>
+        <route-files value="SumoConfig/osm.passenger.trips.xml"/>
+        <additional-files value="SumoConfig/osm.poly.xml.gz,SumoConfig/output.add.xml"/>
     </input>
 
     <output>
-        <tripinfo-output value="C:\Users\EMPC\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\SUMO\2025-12-04-11-26-28\tripinfos.xml"/>
-        <statistic-output value="C:\Users\EMPC\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\SUMO\2025-12-04-11-26-28\stats.xml"/>
+        <tripinfo-output value="SumoConfig/tripinfos.xml"/>
+        <statistic-output value="SumoConfig/stats.xml"/>
     </output>
 
     <processing>
@@ -30,12 +30,18 @@
         <no-step-log value="true"/>
     </report>
 
+    <traci_server>
+        <remote-port value="62521"/>
+    </traci_server>
+
     <gui_only>
-        <gui-settings-file value="C:\Users\EMPC\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\SUMO\2025-12-04-11-26-28\osm.view.xml"/>
+        <gui-settings-file value="SumoConfig/osm.view.xml"/>
+        <start value="true"/>
     </gui_only>
 
 </sumoConfiguration>
 -->
 
 <tripinfos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/tripinfo_file.xsd">
+    <tripinfo id="veh0" depart="0.00" departLane="-1427117336#3_0" departPos="0.20" departSpeed="11.53" departDelay="0.00" arrival="69.00" arrivalLane="-326116285_1" arrivalPos="0.20" arrivalSpeed="3.30" duration="69.00" routeLength="329.53" waitingTime="23.00" waitingCount="1" stopTime="0.00" timeLoss="31.12" rerouteNo="1" devices="tripinfo_veh0 routing_veh0" vType="veh_passenger" speedFactor="1.06" vaporized=""/>
 </tripinfos>
