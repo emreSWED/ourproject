@@ -46,7 +46,7 @@ public class Main {
         System.out.println("List of Traffic Lights: " + trafficLightIDs);
 
         List<String> controlledjunctions = (List<String>)conn.dojobget(Trafficlight.getControlledJunctions(trafficLightIDs.get(0)));
-        System.out.println("Controlled junctions by that traffic light:"+ controlledjunctions);
+        System.out.println("Controlled junctions by traffic light nr 1:"+ controlledjunctions);
 
         List<String> controlledLanes = (List<String>) conn.dojobget(Trafficlight.getControlledLanes(trafficLightIDs.get(0)));
         System.out.println("List of Controlled Lanes: " + controlledLanes);
