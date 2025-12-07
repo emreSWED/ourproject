@@ -10,7 +10,7 @@ public class JunctionLoader {
 
     public static List<String> JunctionIdList;
     public static ArrayList<Object> JunctionPositionList;
-    public static int numberOfJunctions = 2;
+    public static int numberOfJunctions = 2; //these can all be static since no instance of JunctionLoader is ever initiated
     //private double x;
     //private double y;
 
