@@ -9,6 +9,6 @@ public class LaneToRender  {
     private double yposEnd;
 
     public LaneToRender(){
-
+        //TODO: needs to grab coordinates out of the List of SumoGeometry Lanes with end points for TrafficLight insertion in the GUI
     }
 }
