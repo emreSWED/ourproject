@@ -59,10 +59,12 @@ public class Main {
         String trafficLightState = (String)conn.dojobget(Trafficlight.getRedYellowGreenState(trafficLightIDs.get(0)));
         System.out.println("State of first traffic light: " + trafficLightState);
 
-        System.out.println("Location of lane 28378604_0: " + conn.dojobget(Lane.getShape("28378604_0")));
+        System.out.println("Location of lane :254384053_11_0: " + conn.dojobget(Lane.getShape(":254384053_11_0")));
         //Last coordinates on Lanes "going from" are those where traffic lights should be placed. In this case: 85.42, 107.99 since
         //its the first in List of controlled links.
-
+        LaneLoader currentLanes = new LaneLoader(conn);
+        LaneLoader.printAllLaneCoordinates();
+        LaneLoader.printAllLaneIDs();
 
         for (int step = 0; step < 10000; step++) {
             conn.step();
