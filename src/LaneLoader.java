@@ -30,7 +30,10 @@ public class LaneLoader {
     }
 
     public static void printAllLaneCoordinates(){
-        System.out.println(lanePositions);
+        for(int i = 0; i < laneCount; i++) {
+            System.out.println(lanePositions.get(i));
+            System.out.println("\n");
+        }
     }
     public static void printAllLaneIDs(){
         System.out.println(laneIDs);
