@@ -5,57 +5,64 @@ import de.tudresden.sumo.objects.SumoLinkList;
 import de.tudresden.sumo.objects.SumoTLSController;
 import de.tudresden.sumo.util.*;
 import it.polito.appeal.traci.*;
-
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.scene.Scene;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+import javafx.scene.canvas.Canvas;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import conn.ConnectionManager;
 
-import conn.ConnectionManager;
 
-public class Main {
+
+public class Main extends Application {
     public static void main(String[] args) throws Exception {
 
-        ConnectionManager conn = new ConnectionManager("SumoConfig/myconfig.sumocfg");
-        conn.startConnection();
-
+        launch(args);
+    }
+/*
         //get map data for UI
-       // List<String> trafficLights = conn.getTrafficLights();
-       // List<String> lanes = (List<String>) conn.dojobget(Lane.getIDList());
-       // JunctionLoader junctions = new JunctionLoader(conn.traciConnection);
+        // List<String> trafficLights = conn.getTrafficLights();
+        // List<String> lanes = (List<String>) conn.dojobget(Lane.getIDList());
+        // JunctionLoader junctions = new JunctionLoader(conn.traciConnection);
 
         //github test 17:32
-      // System.out.println("current number of traffic lights: " + trafficLights.size());
-      //  System.out.println("ID of Traffic lights:"+ conn.getTrafficLights());
-       // System.out.println("ID of first Lane:"+ lanes.getFirst());
-       // System.out.println(conn.dojobget(Lane.getShape(lanes.getFirst())));
-      //  System.out.println("Positions of Junctions:" + junctions.JunctionPositionList);
-       // System.out.println("Links:"+ conn.dojobget(Lane.getLinks(lanes.getFirst())));
-       // SumoLinkList links = new SumoLinkList();
-       // links = (SumoLinkList) conn.dojobget(Lane.getLinks(lanes.getFirst()));
-       // System.out.println(" First list of links for first Lane:"+ links);
-       // trafficLightLanes  = conn.dojobget(Trafficlight.getControlledJunctions(trafficLights.getFirst()));
-       // System.out.println("Controlled links by traffic light 1: " + trafficLightLinks);
+        // System.out.println("current number of traffic lights: " + trafficLights.size());
+        //  System.out.println("ID of Traffic lights:"+ conn.getTrafficLights());
+        // System.out.println("ID of first Lane:"+ lanes.getFirst());
+        // System.out.println(conn.dojobget(Lane.getShape(lanes.getFirst())));
+        //  System.out.println("Positions of Junctions:" + junctions.JunctionPositionList);
+        // System.out.println("Links:"+ conn.dojobget(Lane.getLinks(lanes.getFirst())));
+        // SumoLinkList links = new SumoLinkList();
+        // links = (SumoLinkList) conn.dojobget(Lane.getLinks(lanes.getFirst()));
+        // System.out.println(" First list of links for first Lane:"+ links);
+        // trafficLightLanes  = conn.dojobget(Trafficlight.getControlledJunctions(trafficLights.getFirst()));
+        // System.out.println("Controlled links by traffic light 1: " + trafficLightLinks);
         //System.out.println("First link :"+ trafficLightLinks.getFirst());
-        int numberOfTrafficLights = (int)conn.dojobget(Trafficlight.getIDCount());
+        int numberOfTrafficLights = (int) conn.dojobget(Trafficlight.getIDCount());
         System.out.println("Number of Traffic Lights: " + numberOfTrafficLights);
 
-        List<String> trafficLightIDs = (List<String>)conn.dojobget(Trafficlight.getIDList());
+        List<String> trafficLightIDs = (List<String>) conn.dojobget(Trafficlight.getIDList());
         System.out.println("List of Traffic Lights: " + trafficLightIDs);
 
-        List<String> controlledjunctions = (List<String>)conn.dojobget(Trafficlight.getControlledJunctions(trafficLightIDs.get(0)));
-        System.out.println("Controlled junctions by traffic light nr 1:"+ controlledjunctions);
+        List<String> controlledjunctions = (List<String>) conn.dojobget(Trafficlight.getControlledJunctions(trafficLightIDs.get(0)));
+        System.out.println("Controlled junctions by traffic light nr 1:" + controlledjunctions);
 
         List<String> controlledLanes = (List<String>) conn.dojobget(Trafficlight.getControlledLanes(trafficLightIDs.get(0)));
         System.out.println("List of Controlled Lanes: " + controlledLanes);
 
         SumoLinkList controlledLinks = (SumoLinkList) conn.dojobget(Trafficlight.getControlledLinks(trafficLightIDs.get(0)));
-        for(int i= 0; i<(int)controlledLinks.size(); i++){
+        for (int i = 0; i < (int) controlledLinks.size(); i++) {
             System.out.println("List of Controlled Links: " + controlledLinks.get(i));
         }
 
-        String trafficLightState = (String)conn.dojobget(Trafficlight.getRedYellowGreenState(trafficLightIDs.get(0)));
+        String trafficLightState = (String) conn.dojobget(Trafficlight.getRedYellowGreenState(trafficLightIDs.get(0)));
         System.out.println("State of first traffic light: " + trafficLightState);
 
         System.out.println("Location of lane :254384053_11_0: " + conn.dojobget(Lane.getShape(":254384053_11_0")));
@@ -64,17 +71,44 @@ public class Main {
         LaneLoader currentLanes = new LaneLoader(conn);
         LaneLoader.printAllLaneCoordinates();
         LaneLoader.printAllLaneIDs();
+        //conn.stopConnection();
+        // System.out.println("Connection closed.");
 
-        for (int step = 0; step < 10000; step++) {
-            conn.step();
+ */
 
-            System.out.println("step number " + step + ". Number of vehicles in simulation: " + conn.getVehicles().size());
-            System.out.println("List of cars in simulation: " + conn.getVehicles());
 
-            TimeUnit.MILLISECONDS.sleep(100000);
-        }
-
-        conn.stopConnection();
-        System.out.println("Connection closed.");
+    @Override
+    public void start(Stage stage) throws Exception {
+        Canvas canvas = new Canvas(800, 600);
+        Scene scene = new Scene(new StackPane(canvas));
+        stage.setScene(scene);
+        stage.show();
+        ConnectionManager conn = new ConnectionManager("SumoConfig/myconfig.sumocfg");
+        conn.startConnection();
+        new Thread(() -> runSimulationLoop(canvas,conn)).start();
     }
+
+    private void runSimulationLoop(Canvas canvas, ConnectionManager conn) {
+        try {
+            LaneLoader currentLanes = new LaneLoader(conn);
+            LaneLoader.printAllLaneCoordinates();
+            LaneLoader.printAllLaneIDs();
+            for (int step = 0; step < 10000; step++) {
+                conn.step();
+                List<String> vehicles = conn.getVehicles();
+
+                Platform.runLater(() -> drawVehicles(canvas, vehicles));
+
+                TimeUnit.MILLISECONDS.sleep(10);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void drawVehicles(Canvas canvas, List<String> vehicles) {
+        //TODO
+
+    }
+
 }
