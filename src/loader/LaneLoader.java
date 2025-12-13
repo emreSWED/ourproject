@@ -7,7 +7,7 @@ import de.tudresden.sumo.objects.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import conn.ConnectionManager;
+import util.ConnectionManager;
 
 public class LaneLoader {
     public static int laneCount; //keeps track of number of lanes

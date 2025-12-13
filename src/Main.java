@@ -1,11 +1,11 @@
 
 import de.tudresden.sumo.cmd.*;
-import de.tudresden.sumo.objects.SumoLinkList;
-
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import conn.ConnectionManager;
+
+import util.MySystem;
+import util.ConnectionManager;
 
 import loader.LaneLoader;
 
@@ -14,9 +14,9 @@ import model.MyTrafficLight;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-
         ConnectionManager conn = new ConnectionManager("SumoConfig/myconfig.sumocfg");
         conn.startConnection();
+        MySystem mySystem = new MySystem(conn);
 
         //get map data for UI
        // List<String> trafficLights = conn.getTrafficLights();
@@ -39,7 +39,7 @@ public class Main {
         int numberOfTrafficLights = (int)conn.dojobget(Trafficlight.getIDCount());
         System.out.println("Number of Traffic Lights: " + numberOfTrafficLights);
 
-        List<MyTrafficLight> trafficLights = conn.getTrafficLights();
+        List<MyTrafficLight> trafficLights = mySystem.getTrafficLights();
         System.out.println("List of Traffic Lights: " + trafficLights);
 
         for (MyTrafficLight t : trafficLights) {
@@ -60,12 +60,18 @@ public class Main {
         for (int step = 0; step < 10000; step++) {
             conn.step();
 
-            System.out.println("step number " + step + ". Number of vehicles in simulation: " + conn.getVehicles().size());
-            System.out.println("List of cars in simulation: " + conn.getVehicles());
+            System.out.println("step number " + step + ". Number of vehicles in simulation: " + mySystem.getVehicles().size());
+            System.out.println("List of cars in simulation: " + mySystem.getVehicles());
 
-            List<MyVehicle> vehicles = conn.getVehicles();
+            if (step == 5) {
+                //MyTrafficLight t1 = new MyTrafficLight("254384053", conn.traciConnection);
+                //t1.setPhase();
+                MyVehicle v = mySystem.getVehicles().getFirst();
+                v.setSpeed(1.0);
+            }
+
+            List<MyVehicle> vehicles = mySystem.getVehicles();
             for (MyVehicle v : vehicles) {
-                v.setSpeed(50.0);
                 System.out.println(v.getX() + ", " + v.getY() + ", " + v.getSpeed() + ", " + v.getId());
             }
 
