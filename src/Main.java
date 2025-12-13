@@ -8,7 +8,9 @@ import java.util.concurrent.TimeUnit;
 import conn.ConnectionManager;
 
 import loader.LaneLoader;
+
 import model.MyVehicle;
+import model.MyTrafficLight;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -37,22 +39,16 @@ public class Main {
         int numberOfTrafficLights = (int)conn.dojobget(Trafficlight.getIDCount());
         System.out.println("Number of Traffic Lights: " + numberOfTrafficLights);
 
-        List<String> trafficLightIDs = (List<String>)conn.dojobget(Trafficlight.getIDList());
-        System.out.println("List of Traffic Lights: " + trafficLightIDs);
+        List<MyTrafficLight> trafficLights = conn.getTrafficLights();
+        System.out.println("List of Traffic Lights: " + trafficLights);
 
-        List<String> controlledjunctions = (List<String>)conn.dojobget(Trafficlight.getControlledJunctions(trafficLightIDs.get(0)));
-        System.out.println("Controlled junctions by traffic light nr 1:"+ controlledjunctions);
-
-        List<String> controlledLanes = (List<String>) conn.dojobget(Trafficlight.getControlledLanes(trafficLightIDs.get(0)));
-        System.out.println("List of Controlled Lanes: " + controlledLanes);
-
-        SumoLinkList controlledLinks = (SumoLinkList) conn.dojobget(Trafficlight.getControlledLinks(trafficLightIDs.get(0)));
-        for (int i = 0; i < (int)controlledLinks.size(); i++) {
-            System.out.println("List of Controlled Links: " + controlledLinks.get(i));
+        for (MyTrafficLight t : trafficLights) {
+            System.out.println("ID: " + t.getId());
+            System.out.println("ControlledJunctions: " + t.getControlledJunctions());
+            System.out.println("ControlledLanes: " + t.getControlledLanes());
+            System.out.println("ControlledLinks: " + t.getControlledLinks());
+            System.out.println("State: " + t.getState());
         }
-
-        String trafficLightState = (String)conn.dojobget(Trafficlight.getRedYellowGreenState(trafficLightIDs.get(0)));
-        System.out.println("State of first traffic light: " + trafficLightState);
 
         System.out.println("Location of lane :254384053_11_0: " + conn.dojobget(Lane.getShape(":254384053_11_0")));
         //Last coordinates on Lanes "going from" are those where traffic lights should be placed. In this case: 85.42, 107.99 since

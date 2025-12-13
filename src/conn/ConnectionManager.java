@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.MyVehicle;
+import model.MyTrafficLight;
 
 public class ConnectionManager {
     private String configFile;
@@ -51,7 +52,13 @@ public class ConnectionManager {
         return myVehicles;
     }
 
-    public List<String> getTrafficLights() throws Exception {
-        return (List<String>) traciConnection.do_job_get(Trafficlight.getIDList());
+    public List<MyTrafficLight> getTrafficLights() throws Exception {
+        List<String> trafficLights = (List<String>) traciConnection.do_job_get(Trafficlight.getIDList());
+        List<MyTrafficLight> mytrafficLights = new ArrayList<MyTrafficLight>();
+        for (String trafficLightID : trafficLights) {
+            MyTrafficLight t = new MyTrafficLight(trafficLightID, this.traciConnection);
+            mytrafficLights.add(t);
+        }
+        return mytrafficLights;
     }
 }
