@@ -38,6 +38,10 @@ public class Main {
        // trafficLightLanes  = conn.dojobget(Trafficlight.getControlledJunctions(trafficLights.getFirst()));
        // System.out.println("Controlled links by traffic light 1: " + trafficLightLinks);
         //System.out.println("First link :"+ trafficLightLinks.getFirst());
+
+
+
+
         int numberOfTrafficLights = (int)conn.dojobget(Trafficlight.getIDCount());
         System.out.println("Number of Traffic Lights: " + numberOfTrafficLights);
 
