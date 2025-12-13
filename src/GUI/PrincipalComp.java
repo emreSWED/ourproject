@@ -1,8 +1,11 @@
+package GUI;
+
 import java.awt.*;
 import javax.swing.*;
 
 
-
+//place  command in Main to call JFrame Princ...class and interact with the
+//simulation from the panel-> PrincipalComp panel = new PrincipalComp();
 
 public class PrincipalComp extends JFrame{
 

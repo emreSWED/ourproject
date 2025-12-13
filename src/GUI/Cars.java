@@ -1,3 +1,5 @@
+package GUI;
+
 public class Cars {
     private static int carsCount = 0;
     private int carId;
