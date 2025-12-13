@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="traas-1.1">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libraries/traas-1.1.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
