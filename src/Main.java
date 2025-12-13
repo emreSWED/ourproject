@@ -1,7 +1,5 @@
 
 import de.tudresden.sumo.cmd.*;
-import de.tudresden.sumo.objects.SumoLinkList;
-
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -62,6 +60,11 @@ public class Main {
 
             System.out.println("step number " + step + ". Number of vehicles in simulation: " + conn.getVehicles().size());
             System.out.println("List of cars in simulation: " + conn.getVehicles());
+
+            if (step == 20) {
+                MyTrafficLight t1 = new MyTrafficLight("254384053", conn.traciConnection);
+                //t1.setPhase();
+            }
 
             List<MyVehicle> vehicles = conn.getVehicles();
             for (MyVehicle v : vehicles) {
