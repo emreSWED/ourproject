@@ -5,7 +5,10 @@ import de.tudresden.sumo.util.*;
 import it.polito.appeal.traci.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+
+import model.MyVehicle;
 
 public class ConnectionManager {
     private String configFile;
@@ -38,8 +41,14 @@ public class ConnectionManager {
         traciConnection.do_timestep();
     }
 
-    public List<String> getVehicles() throws Exception {
-        return (List<String>) traciConnection.do_job_get(Vehicle.getIDList());
+    public List<MyVehicle> getVehicles() throws Exception {
+        List<String> vehicles = (List<String>) traciConnection.do_job_get(Vehicle.getIDList());
+        List<MyVehicle> myVehicles = new ArrayList<MyVehicle>();
+        for (String vehicleID : vehicles) {
+            MyVehicle v = new MyVehicle(vehicleID, this.traciConnection);
+            myVehicles.add(v);
+        }
+        return myVehicles;
     }
 
     public List<String> getTrafficLights() throws Exception {

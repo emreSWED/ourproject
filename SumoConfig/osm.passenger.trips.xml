@@ -24,7 +24,7 @@
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
     <vType id="veh_passenger" vClass="passenger"/>
     <trip id="veh0" depart="0.00" from="-23490810#1" to="23490810#1" via="28378604"  departLane="best" type="veh_passenger" departSpeed="max"/>
-    <trip id="veh1" depart="1108.83" from="-23490810#1" to="23490810#1" via="317948763"  departLane="best" type="veh_passenger" departSpeed="max"/>
-    <trip id="veh2" depart="2217.65" from="495683152" to="23490810#1" via="-317948763"  departLane="best" type="veh_passenger" departSpeed="max"/>
-    <trip id="veh3" depart="3326.48" from="-23490810#1" to="23490810#1" via="28378604"  departLane="best" type="veh_passenger" departSpeed="max"/>
+    <trip id="veh1" depart="10.00" from="-23490810#1" to="23490810#1" via="317948763"  departLane="best" type="veh_passenger" departSpeed="max"/>
+    <trip id="veh2" depart="20.00" from="495683152" to="23490810#1" via="-317948763"  departLane="best" type="veh_passenger" departSpeed="max"/>
+    <trip id="veh3" depart="30.00" from="-23490810#1" to="23490810#1" via="28378604"  departLane="best" type="veh_passenger" departSpeed="max"/>
 </routes>

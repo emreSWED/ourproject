@@ -1,3 +1,5 @@
+package loader;
+
 import de.tudresden.sumo.cmd.Junction;
 import it.polito.appeal.traci.SumoTraciConnection;
 
@@ -10,7 +12,7 @@ public class JunctionLoader {
 
     public static List<String> JunctionIdList;
     public static ArrayList<Object> JunctionPositionList;
-    public static int numberOfJunctions = 2; //these can all be static since no instance of JunctionLoader is ever initiated
+    public static int numberOfJunctions = 2; //these can all be static since no instance of loader.JunctionLoader is ever initiated
     //private double x;
     //private double y;
 

@@ -1,18 +1,14 @@
 
 import de.tudresden.sumo.cmd.*;
-import de.tudresden.sumo.objects.SumoLink;
 import de.tudresden.sumo.objects.SumoLinkList;
-import de.tudresden.sumo.objects.SumoTLSController;
-import de.tudresden.sumo.util.*;
-import it.polito.appeal.traci.*;
 
 
-import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import conn.ConnectionManager;
 
-import conn.ConnectionManager;
+import loader.LaneLoader;
+import model.MyVehicle;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -23,7 +19,7 @@ public class Main {
         //get map data for UI
        // List<String> trafficLights = conn.getTrafficLights();
        // List<String> lanes = (List<String>) conn.dojobget(Lane.getIDList());
-       // JunctionLoader junctions = new JunctionLoader(conn.traciConnection);
+       // loader.JunctionLoader junctions = new loader.JunctionLoader(conn.traciConnection);
 
         //github test 17:32
       // System.out.println("current number of traffic lights: " + trafficLights.size());
@@ -51,7 +47,7 @@ public class Main {
         System.out.println("List of Controlled Lanes: " + controlledLanes);
 
         SumoLinkList controlledLinks = (SumoLinkList) conn.dojobget(Trafficlight.getControlledLinks(trafficLightIDs.get(0)));
-        for(int i= 0; i<(int)controlledLinks.size(); i++){
+        for (int i = 0; i < (int)controlledLinks.size(); i++) {
             System.out.println("List of Controlled Links: " + controlledLinks.get(i));
         }
 
@@ -71,7 +67,13 @@ public class Main {
             System.out.println("step number " + step + ". Number of vehicles in simulation: " + conn.getVehicles().size());
             System.out.println("List of cars in simulation: " + conn.getVehicles());
 
-            TimeUnit.MILLISECONDS.sleep(100000);
+            List<MyVehicle> vehicles = conn.getVehicles();
+            for (MyVehicle v : vehicles) {
+                v.setSpeed(50.0);
+                System.out.println(v.getX() + ", " + v.getY() + ", " + v.getSpeed() + ", " + v.getId());
+            }
+
+            TimeUnit.MILLISECONDS.sleep(100);
         }
 
         conn.stopConnection();
