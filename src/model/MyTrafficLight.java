@@ -33,7 +33,15 @@ public class MyTrafficLight {
         return (String) this.conn.do_job_get(Trafficlight.getRedYellowGreenState(this.id));
     }
 
-    //setProg
 
-    //setPhase
+
+    public void setPhase(String state){
+        try {
+            conn.do_job_set(Trafficlight.setRedYellowGreenState(this.id, state));
+        }catch (Exception e){
+            System.out.println("Could not set phase");
+        }
+    }
+
+
 }
