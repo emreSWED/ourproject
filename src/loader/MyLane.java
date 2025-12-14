@@ -37,7 +37,7 @@ public class MyLane {
             ypositions[i] = YCoordinateFlipper.flipYCoords(geometry.coords.get(i).y); //Sumo has 0,0 as BOTTOM LEFT; where as Graphics2D renders with TOP LEFT
         }
         //loads all the coordinates into an array for much simpler handling
-        //System.out.println("creating Path2D object for rendering for lane: " + laneID + "..."); //todo LOGGER
+        System.out.println("creating Path2D object for rendering for lane: " + laneID + "..."); //todo LOGGER
         for(int i = 0; i < currentListSize; i++){
             if(i == 0){
                 lanePath.moveTo(xpositions[i], ypositions[i]);
@@ -48,6 +48,6 @@ public class MyLane {
         }
         lanePath.closePath();
 
-        //System.out.println("Path2D object created."); //todo LOGGER
+        System.out.println("Path2D object created."); //todo LOGGER
     }
 }
