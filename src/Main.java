@@ -8,6 +8,7 @@ import de.tudresden.sumo.objects.SumoTLSController;
 import de.tudresden.sumo.util.*;
 import it.polito.appeal.traci.*;
 
+import loader.LaneLoader;
 import model.MyTrafficLight;
 import java.io.IOException;
 import java.util.List;
@@ -73,7 +74,7 @@ public class Main {
         //Last coordinates on Lanes "going from" are those where traffic lights should be placed. In this case: 85.42, 107.99 since
         //its the first in List of controlled links.
         LaneLoader currentLanes = new LaneLoader(conn);
-        LaneLoader.printAllLaneCoordinates();
+
         LaneLoader.printAllLaneIDs();
 
         for (int step = 0; step < 10000; step++) {
