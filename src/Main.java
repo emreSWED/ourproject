@@ -51,6 +51,11 @@ public class Main {
             new PrincipalComp();
         });
 
+        int numberOfTrafficLights = (int)conn.dojobget(Trafficlight.getIDCount());
+        System.out.println("Number of Traffic Lights: " + numberOfTrafficLights);
+
+        List<MyTrafficLight> trafficLights = mySystem.getTrafficLights();
+        System.out.println("List of Traffic Lights: " + trafficLights);
 
         System.out.println("Location of lane :254384053_11_0: " + conn.dojobget(Lane.getShape(":254384053_11_0")));
         //Last coordinates on Lanes "going from" are those where traffic lights should be placed. In this case: 85.42, 107.99 since
@@ -76,6 +81,14 @@ public class Main {
                 v.setColor(v.getId(), new SumoColor(0x00,0x00,0xFF,0x00));
                 v.setSpeed(1.0);
                 System.out.println(v.getX() + ", " + v.getY() + ", " + v.getSpeed() + ", " + v.getId());
+            }
+
+            for (MyTrafficLight t : trafficLights) {
+                System.out.println("ID: " + t.getId());
+                System.out.println("ControlledJunctions: " + t.getControlledJunctions());
+                System.out.println("ControlledLanes: " + t.getControlledLanes());
+                System.out.println("ControlledLinks: " + t.getControlledLinks());
+                System.out.println("State: " + t.getState());
             }
 
             TimeUnit.MILLISECONDS.sleep(100);
