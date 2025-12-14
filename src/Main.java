@@ -4,6 +4,8 @@ import de.tudresden.sumo.cmd.*;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import loader.RouteGenerator;
+import loader.VehicleAdder;
 import util.MySystem;
 import util.ConnectionManager;
 
@@ -59,9 +61,17 @@ public class Main {
         //LaneLoader.printAllLaneCoordinates();
         LaneLoader.printAllLaneIDs();
 
+        RouteGenerator.conn = conn;
+        RouteGenerator routeGenerator = new RouteGenerator();
+
+        VehicleAdder.conn = conn;
+        VehicleAdder vehicleAdder = new VehicleAdder();
+
+
+
         for (int step = 0; step < 10000; step++) {
             conn.step();
-
+            if(step%5==0) vehicleAdder.addRandomVehicle();
             System.out.println("step number " + step + ". Number of vehicles in simulation: " + mySystem.getVehicles().size());
             System.out.println("List of cars in simulation: " + mySystem.getVehicles());
 
@@ -77,7 +87,7 @@ public class Main {
                 System.out.println(v.getX() + ", " + v.getY() + ", " + v.getSpeed() + ", " + v.getId());
             }
 
-            TimeUnit.MILLISECONDS.sleep(100);
+            TimeUnit.MILLISECONDS.sleep(2000);
         }
 
         conn.stopConnection();
