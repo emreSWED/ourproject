@@ -1,4 +1,5 @@
 package GUI;
+import model.MyVehicle;
 
 public class Cars {
     private static int carsCount = 0;
@@ -11,6 +12,7 @@ public class Cars {
         carsCount++;
         this.x =x;
         this.y =y;
+
         carId = carsCount;
     }
 

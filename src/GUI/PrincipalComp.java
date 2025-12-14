@@ -1,4 +1,7 @@
 package GUI;
+import it.polito.appeal.traci.SumoTraciConnection;
+import model.MyVehicle;
+import conn.ConnectionManager;
 
 import java.awt.*;
 import javax.swing.*;
@@ -6,6 +9,8 @@ import javax.swing.*;
 
 public class PrincipalComp extends JFrame{
 
+    ConnectionManager connManager = new ConnectionManager("myConfig.sumocfg");
+    SumoTraciConnection conn = connManager.traciConnection;
     //Visuals of frame base
     public PrincipalComp() {
         JFrame frame = new JFrame("Sumo Trafic Simulation");
@@ -49,7 +54,18 @@ public class PrincipalComp extends JFrame{
         slider.setPaintTicks(true);
         slider.setPaintLabels(true);
         slider.setLabelTable(slider.createStandardLabels(20));
+        //experiment with Veh
+        MyVehicle car1 = new MyVehicle("Car1",conn);
 
+        //event listener of slider for speed. Its going to use method from class MyVehicle
+        slider.addChangeListener(e->{
+            if(!slider.getValueIsAdjusting()){
+                double currentValue = slider.getValue();
+                System.out.println("Slider Value" + currentValue);
+                car1.setSpeed(currentValue);
+            }
+
+        });
 
         //buttons for options_panel
         JButton start_b = new JButton("Start"); //this Button should call main to execute the Simulation
@@ -83,10 +99,10 @@ public class PrincipalComp extends JFrame{
         frame.add(simulation_Panel, BorderLayout.CENTER);
 
         //auto creation
-        Cars car1 = new Cars(0, 150);
-        Cars car2 = new Cars(30, 100);
-        simulation_Panel.addCar(car1);
+        Cars car2 = new Cars(0, 150);
+        Cars car3 = new Cars(30, 100);
         simulation_Panel.addCar(car2);
+        simulation_Panel.addCar(car3);
 
 
 

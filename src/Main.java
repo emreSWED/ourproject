@@ -7,13 +7,14 @@ import de.tudresden.sumo.objects.SumoTLSController;
 import de.tudresden.sumo.util.*;
 import it.polito.appeal.traci.*;
 
-
+import model.MyTrafficLight;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import conn.ConnectionManager;
 
-import conn.ConnectionManager;
+
+import model.MyVehicle;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -79,6 +80,17 @@ public class Main {
 
             System.out.println("step number " + step + ". Number of vehicles in simulation: " + conn.getVehicles().size());
             System.out.println("List of cars in simulation: " + conn.getVehicles());
+
+            if (step == 20) {
+                MyTrafficLight t1 = new MyTrafficLight("254384053", conn.traciConnection);
+                //t1.setPhase();
+            }
+
+            List<MyVehicle> vehicles = conn.getVehicles();
+            for (MyVehicle v : vehicles) {
+                v.setSpeed(50.0);
+                System.out.println(v.getX() + ", " + v.getY() + ", " + v.getSpeed() + ", " + v.getId());
+            }
 
             TimeUnit.MILLISECONDS.sleep(100000);
         }
