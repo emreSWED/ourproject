@@ -93,7 +93,7 @@ public class Main {
 
             TimeUnit.MILLISECONDS.sleep(100);
         }
-
+        //SOME TESTS
         conn.stopConnection();
         System.out.println("Connection closed.");
     }
