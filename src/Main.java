@@ -1,6 +1,7 @@
 
 import GUI.PrincipalComp;
 import de.tudresden.sumo.cmd.*;
+import de.tudresden.sumo.objects.SumoColor;
 import de.tudresden.sumo.objects.SumoLink;
 import de.tudresden.sumo.objects.SumoLinkList;
 import de.tudresden.sumo.objects.SumoTLSController;
@@ -85,9 +86,11 @@ public class Main {
                 MyTrafficLight t1 = new MyTrafficLight("254384053", conn.traciConnection);
                 //t1.setPhase();
             }
-
+            ;
             List<MyVehicle> vehicles = conn.getVehicles();
             for (MyVehicle v : vehicles) {
+
+                v.setColor(v.getIdS(), new SumoColor(255,0,0,255));
                 v.setSpeed(50.0);
                 System.out.println(v.getX() + ", " + v.getY() + ", " + v.getSpeed() + ", " + v.getId());
             }

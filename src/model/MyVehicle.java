@@ -1,6 +1,6 @@
 package model;
 
-import de.tudresden.sumo.cmd.Vehicle;
+import de.tudresden.sumo.objects.SumoColor;
 import de.tudresden.sumo.objects.SumoPosition2D;
 import it.polito.appeal.traci.SumoTraciConnection;
 
@@ -13,7 +13,11 @@ public class MyVehicle {
         this.conn = conn;
     }
 
-    public String getId(){
+    public int getId(){
+       return Integer.parseInt(id);
+    }
+
+    public String getIdS(){
         return id;
     }
 
@@ -54,5 +58,14 @@ public class MyVehicle {
     }
 
     //setColor soon...
+    public void setColor(String id,SumoColor color){
+        try{
+            conn.do_job_set(de.tudresden.sumo.cmd.Vehicle.setColor(this.id, new SumoColor(color.a,color.g,color.r,color.b)));
+
+        }catch (Exception e){
+            System.out.println("Fehler" + id);
+        }
+
+    }
 
 }

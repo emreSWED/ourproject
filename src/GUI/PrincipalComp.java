@@ -75,6 +75,7 @@ public class PrincipalComp extends JFrame{
         JButton addC_b = new JButton("+Add Car");
 
 
+
         //checkbox Options
         String[] carC_Options = {
                 "Red","Green", "Blue", "Gray"
@@ -92,6 +93,11 @@ public class PrincipalComp extends JFrame{
             moreOpt_panel.repaint(); // pinta todos de nuevo
         });
         buttons_panel.add(addC_b);
+
+        //event for Stop Button
+        //Speed soll auf  Null gesetzt werden, um die Simulation zu stoppen
+        //Traffic Lights sollen gestopt werden
+        //last Speed Value should be stored for next start
 
 
         //Panel Instance for Cars
