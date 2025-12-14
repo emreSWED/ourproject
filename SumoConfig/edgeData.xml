@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2025-12-13T20:54:20.323035+01:00 by Eclipse SUMO GUI 1.25.0
+<!-- generated on 2025-12-14 15:24:36 by Eclipse SUMO GUI Version 1.24.0
 <sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
-        <net-file value="C:\Users\hanan\OneDrive\Documenti\FH Frankfurt UNI\ourproject\SumoConfig\osm.net.xml.gz"/>
-        <route-files value="C:\Users\hanan\OneDrive\Documenti\FH Frankfurt UNI\ourproject\SumoConfig\osm.passenger.trips.xml"/>
-        <additional-files value="C:\Users\hanan\OneDrive\Documenti\FH Frankfurt UNI\ourproject\SumoConfig\osm.poly.xml.gz,C:\Users\hanan\OneDrive\Documenti\FH Frankfurt UNI\ourproject\SumoConfig\output.add.xml"/>
+        <net-file value="SumoConfig/osm.net.xml.gz"/>
+        <route-files value="SumoConfig/osm.passenger.trips.xml"/>
+        <additional-files value="SumoConfig/osm.poly.xml.gz,SumoConfig/output.add.xml"/>
     </input>
 
     <output>
-        <tripinfo-output value="C:\Users\hanan\OneDrive\Documenti\FH Frankfurt UNI\ourproject\SumoConfig\tripinfos.xml"/>
-        <statistic-output value="C:\Users\hanan\OneDrive\Documenti\FH Frankfurt UNI\ourproject\SumoConfig\stats.xml"/>
+        <tripinfo-output value="SumoConfig/tripinfos.xml"/>
+        <statistic-output value="SumoConfig/stats.xml"/>
     </output>
 
     <processing>
@@ -31,11 +31,11 @@
     </report>
 
     <traci_server>
-        <remote-port value="59492"/>
+        <remote-port value="51773"/>
     </traci_server>
 
     <gui_only>
-        <gui-settings-file value="C:\Users\hanan\OneDrive\Documenti\FH Frankfurt UNI\ourproject\SumoConfig\osm.view.xml"/>
+        <gui-settings-file value="SumoConfig/osm.view.xml"/>
         <start value="true"/>
     </gui_only>
 
@@ -43,9 +43,9 @@
 -->
 
 <meandata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/meandata_file.xsd">
-    <interval begin="0.00" end="18.00" id="wizard_example">
-        <edge id="-23490810#0" sampledSeconds="9.78" traveltime="9.03" overlapTraveltime="9.80" density="6.34" overlapDensity="6.86" laneDensity="6.34" occupancy="3.21" waitingTime="0.00" timeLoss="0.00" speed="8.59" speedRelative="1.03" departed="0" arrived="0" entered="1" left="1" laneChangedFrom="0" laneChangedTo="0" flow="195.97"/>
-        <edge id="-23490810#1" sampledSeconds="13.55" traveltime="7.17" overlapTraveltime="7.76" density="12.45" overlapDensity="12.99" laneDensity="12.45" occupancy="6.36" waitingTime="0.00" timeLoss="0.34" speed="8.11" speedRelative="0.97" departed="2" arrived="0" entered="0" left="1" laneChangedFrom="0" laneChangedTo="0" flow="363.53"/>
+    <interval begin="0.00" end="2.00" id="wizard_example">
+        <edge id="-23490810#0" sampledSeconds="0.00" departed="0" arrived="0" entered="0" left="0" laneChangedFrom="0" laneChangedTo="0"/>
+        <edge id="-23490810#1" sampledSeconds="1.00" traveltime="6.56" overlapTraveltime="7.13" density="8.63" laneDensity="8.63" occupancy="4.31" waitingTime="0.00" timeLoss="0.00" speed="8.83" speedRelative="1.06" departed="1" arrived="0" entered="0" left="0" laneChangedFrom="0" laneChangedTo="0"/>
         <edge id="-28378604" sampledSeconds="0.00" departed="0" arrived="0" entered="0" left="0" laneChangedFrom="0" laneChangedTo="0"/>
         <edge id="-317948763" sampledSeconds="0.00" departed="0" arrived="0" entered="0" left="0" laneChangedFrom="0" laneChangedTo="0"/>
         <edge id="-495683152" sampledSeconds="0.00" departed="0" arrived="0" entered="0" left="0" laneChangedFrom="0" laneChangedTo="0"/>
