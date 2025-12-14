@@ -1,4 +1,5 @@
 
+import GUI.PrincipalComp;
 import de.tudresden.sumo.cmd.*;
 import de.tudresden.sumo.objects.SumoLink;
 import de.tudresden.sumo.objects.SumoLinkList;
@@ -38,6 +39,10 @@ public class Main {
        // trafficLightLanes  = conn.dojobget(Trafficlight.getControlledJunctions(trafficLights.getFirst()));
        // System.out.println("Controlled links by traffic light 1: " + trafficLightLinks);
         //System.out.println("First link :"+ trafficLightLinks.getFirst());
+
+        javax.swing.SwingUtilities.invokeLater(() -> {
+            new PrincipalComp();
+        });
 
 
 
