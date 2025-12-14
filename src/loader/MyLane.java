@@ -4,7 +4,7 @@ import java.awt.geom.Path2D;
 import java.util.ArrayList;
 import java.util.List;
 
-import conn.ConnectionManager;
+import util.ConnectionManager;
 import de.tudresden.sumo.cmd.Lane;
 import de.tudresden.sumo.cmd.Simulation;
 import de.tudresden.sumo.objects.SumoGeometry;

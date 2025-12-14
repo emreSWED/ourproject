@@ -13,15 +13,11 @@ public class MyVehicle {
         this.conn = conn;
     }
 
-    public int getId(){
-       return Integer.parseInt(id);
+    public String getId() {
+       return this.id;
     }
 
-    public String getIdS(){
-        return id;
-    }
-
-    public double getX(){
+    public double getX() {
         try{
             SumoPosition2D pos = (SumoPosition2D) conn.do_job_get(de.tudresden.sumo.cmd.Vehicle.getPosition(this.id));
             return pos.x;
@@ -49,23 +45,20 @@ public class MyVehicle {
 
     public void setSpeed(double speedMetersPerSecond){
         try{
-            conn.do_job_get(de.tudresden.sumo.cmd.Vehicle.setSpeed(this.id, speedMetersPerSecond));
+            conn.do_job_set(de.tudresden.sumo.cmd.Vehicle.setSpeed(this.id, speedMetersPerSecond));
             System.out.println("Fahrzeug " + id + " auf " + speedMetersPerSecond + " m/s gesetzt.");
         }catch(Exception e){
-            System.out.println("Fehler" + id);
+            System.out.println("Fehler speed " + id);
 
         }
     }
 
-    //setColor soon...
-    public void setColor(String id,SumoColor color){
-        try{
-            conn.do_job_set(de.tudresden.sumo.cmd.Vehicle.setColor(this.id, new SumoColor(color.a,color.g,color.r,color.b)));
-
-        }catch (Exception e){
-            System.out.println("Fehler" + id);
+    public void setColor(String id, SumoColor color) {
+        try {
+            conn.do_job_set(de.tudresden.sumo.cmd.Vehicle.setColor(this.id, new SumoColor(color.a, color.g, color.r, color.b)));
+            System.out.println("Color set to " + color.r + ", " + color.g + ", " + color.b + ", " + color.a);
+        } catch (Exception e) {
+            System.out.println("Fehler color " + id + " " + e.getMessage());
         }
-
     }
-
 }

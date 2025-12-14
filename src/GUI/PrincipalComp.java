@@ -1,7 +1,7 @@
 package GUI;
 import it.polito.appeal.traci.SumoTraciConnection;
 import model.MyVehicle;
-import conn.ConnectionManager;
+import util.ConnectionManager;
 
 import java.awt.*;
 import javax.swing.*;
