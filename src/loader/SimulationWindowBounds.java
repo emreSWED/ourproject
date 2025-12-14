@@ -2,7 +2,7 @@ package loader;
 
 import de.tudresden.sumo.cmd.Simulation;
 import de.tudresden.sumo.objects.SumoGeometry;
-import util.ConnectionManager;
+import conn.ConnectionManager;
 
 import static loader.YCoordinateFlipper.*;
 
